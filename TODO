@@ -1,12 +1,16 @@
 Ten Seconds To Do
 =================
 
-1 - Initial skeleton
-2 - Stick on github
+DONE 1 - Initial skeleton
+DONE 2 - Stick on github
 3 - Basic assets:
 
-Images counting down from 10 to 0 with clues
+Images counting down from 10 to 0 with background
 Images counting down from 10 to 0 without clues
+
+Basic 'tick', 'tock' sound
+Basic 'ping' sound to indicate correctly answered clue
+
 
 4 - Basic game framework
 
@@ -18,4 +22,4 @@ Scenes:
 4 - Win screen
 5 - Lose screen
 
-5 - Polish etec
+6 - Polish etc
