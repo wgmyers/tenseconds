@@ -31,7 +31,7 @@ Game = {
 
 $text_css = {
     'color': 'green',
-    'text-align': 'center'
+    'text-align': 'center',
 }
 
 $text_font = {
@@ -46,7 +46,7 @@ $small_text_font = {
 
 $counter_css = {
     'color': 'red',
-    'text-align': 'center'
+    'text-align': 'center',
 }
 
 $counter_font = {
