@@ -100,7 +100,9 @@ Crafty.scene('Playing', function() {
     clues[4] = "Nice cuppa";
     clues[3] = "For 'orses";
     clues[2] = "The final frontier";
-    clues[1] = "Pay it later";
+    //clues[1] = "Pay it later";
+    //clues[1] = "Speak friend and...";
+    clues[1] = "Don't tell I tell...";
     clues[0] = "Whistle register note";
     //clues[0] = "Ceci n'est pas...";
 
@@ -113,7 +115,9 @@ Crafty.scene('Playing', function() {
     answers[4] = "T";
     answers[3] = "A";
     answers[2] = "SPACE";
-    answers[1] = "TAB";
+    //answers[1] = "TAB";
+    //answers[1] = "ENTER";
+    answers[1] = "E";
     answers[0] = "F7";
     //answers[0] = "PIPE";
 
@@ -158,7 +162,7 @@ Crafty.scene('Playing', function() {
     countdown = function() {
         c.dec();
 
-        if(c.val > 1 && solved) {
+        if(c.val > 0 && solved) {
             solved = false;
             if(c.val == 7) {
                 solved = true;
