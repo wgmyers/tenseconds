@@ -7,6 +7,18 @@ Crafty.scene('Lost', function() {
         .attr({ x: 0, y: Game.height() / 2, w: Game.width() })
         .css($text_css);
 
+    Crafty.e('2D, DOM, Text')
+        .text('Press any key to restart')
+        .attr({ x: 0, y: 2 * Game.height() / 3, w: Game.width() })
+        .css($text_css);
+
+    this.restart_game = function() {
+        Crafty.scene('Start');
+    }
+    this.bind('KeyDown', this.restart_game);
+
+}, function() {
+    this.unbind('KeyDown', this.restart_game);
 });
 
 // Scene for when the player has lost the game but doesn't know yet
