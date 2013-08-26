@@ -14,7 +14,7 @@ Crafty.scene('Won', function() {
     Crafty.e('2D, DOM, Text')
         .text('You don\'t ever have to do this again :)')
         .attr({ x: 0, y: 2 * Game.height() / 3 - 16, w: Game.width() })
-        .css($text_css)
+        .css($action_css)
         .textFont($small_text_font);
 
     Crafty.audio.play('nothing');
@@ -35,7 +35,7 @@ Crafty.scene('Lost', function() {
     Crafty.e('2D, DOM, Text')
         .text('Press any key to start again')
         .attr({ x: 0, y: 2 * Game.height() / 3 - 16, w: Game.width() })
-        .css($text_css)
+        .css($action_css)
         .textFont($small_text_font);
 
     this.restart_game = function() {
@@ -155,7 +155,7 @@ Crafty.scene('Playing', function() {
         this.clue = Crafty.e('2D, DOM, Text')
                 .text(clues[c.val-1])
                 .attr({ x: 0, y: 4 * Game.height() / 5 - 32, w: Game.width() })
-                .css($text_css)
+                .css($action_css)
                 .textFont($text_font);
 
     }
