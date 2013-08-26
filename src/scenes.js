@@ -64,7 +64,7 @@ Crafty.scene('Losing', function() {
         }
         this.num = Crafty.e('2D, DOM, Text')
                 .text(c.val.toString())
-                .attr({ x: 0, y: Game.height() / 2 - 128, w: Game.width() })
+                .attr({ x: 0, y: Game.height() / 2 - 300, w: Game.width() })
                 .css($counter_css)
                 .textFont($counter_font);
     }
@@ -146,7 +146,7 @@ Crafty.scene('Playing', function() {
         }
         this.num = Crafty.e('2D, DOM, Text')
                 .text(c.val.toString())
-                .attr({ x: 0, y: Game.height() / 2 - 128, w: Game.width() })
+                .attr({ x: 0, y: Game.height() / 2 - 300, w: Game.width() })
                 .css($counter_css)
                 .textFont($counter_font);
         if(this.clue) {

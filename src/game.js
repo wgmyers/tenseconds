@@ -36,12 +36,12 @@ $text_css = {
 
 $text_font = {
     'size': '48px',
-    'family': 'Arial'
+    'family': 'Times'
 }
 
 $small_text_font = {
     'size': '24px',
-    'family': 'Arial'
+    'family': 'Times'
 }
 
 $counter_css = {
@@ -50,6 +50,6 @@ $counter_css = {
 }
 
 $counter_font = {
-    'size': '256px',
+    'size': '512px',
     'family': 'Courier'
 }
