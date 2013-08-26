@@ -30,12 +30,17 @@ Game = {
 }
 
 $text_css = {
-    'color': 'white',
+    'color': 'green',
     'text-align': 'center'
 }
 
 $text_font = {
     'size': '48px',
+    'family': 'Arial'
+}
+
+$small_text_font = {
+    'size': '24px',
     'family': 'Arial'
 }
 

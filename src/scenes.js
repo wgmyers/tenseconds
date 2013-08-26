@@ -9,13 +9,13 @@ Crafty.scene('Lost', function() {
         .textFont($text_font);
 
     Crafty.e('2D, DOM, Text')
-        .text('Press any key to restart')
+        .text('Press any key to start again')
         .attr({ x: 0, y: 2 * Game.height() / 3 - 32, w: Game.width() })
         .css($text_css)
-        .textFont($text_font);
+        .textFont($small_text_font);
 
     this.restart_game = function() {
-        Crafty.scene('Start');
+        Crafty.scene('Playing');
     }
     this.bind('KeyDown', this.restart_game);
 
@@ -96,7 +96,7 @@ Crafty.scene('Start', function() {
         .text('by Wayne Myers')
         .attr({ x: 0, y: Game.height() / 2 - 24, w: Game.width() })
         .css($text_css)
-        .textFont($text_font);
+        .textFont($small_text_font);
 
     Crafty.e('2D, DOM, Text')
         .text('Press any key to start')
