@@ -3,7 +3,7 @@
 // Game over scene for when we have won
 Crafty.scene('Won', function() {
 
-    Crafty.background("#004");
+    Crafty.background("#002");
 
     Crafty.e('2D, DOM, Text')
         .text('A Winner Is You!')
@@ -24,7 +24,7 @@ Crafty.scene('Won', function() {
 // Game over scene for when we have lost
 Crafty.scene('Lost', function() {
 
-    Crafty.background("#000");
+    Crafty.background("#111");
 
     Crafty.e('2D, DOM, Text')
         .text('GAME OVER')
@@ -53,7 +53,7 @@ var sec = 1000;
 // Scene for when the player has lost the game but doesn't know yet
 Crafty.scene('Losing', function() {
 
-    Crafty.background("#700");
+    Crafty.background("#300");
 
     var num;
 
@@ -234,7 +234,7 @@ Crafty.scene('Start', function() {
 
     Crafty.audio.play('beep');
 
-    Crafty.background("#222");
+    Crafty.background("#111");
 
     Crafty.e('2D, DOM, Text')
         .text('Ten Seconds')
@@ -253,6 +253,40 @@ Crafty.scene('Start', function() {
         .attr({ x: 0, y: 2 * Game.height() / 3 - 32, w: Game.width() })
         .css($text_css)
         .textFont($text_font);
+
+    // Try out the particles thing
+    var options = {
+        x: -400,
+        maxParticles: 150,
+        size: 18,
+        sizeRandom: 4,
+        speed: 1,
+        speedRandom: 1.2,
+        // Lifespan in frames
+        lifeSpan: 29,
+        lifeSpanRandom: 7,
+        // Angle is calculated clockwise: 12pm is 0deg, 3pm is 90deg etc.
+        angle: 65,
+        angleRandom: 34,
+        startColour: [128, 131, 0, 1],
+        startColourRandom: [48, 50, 45, 0],
+        endColour: [245, 35, 0, 0],
+        endColourRandom: [60, 60, 60, 0],
+        // Only applies when fastMode is off, specifies how sharp the gradients are drawn
+        sharpness: 20,
+        sharpnessRandom: 10,
+        // Random spread from origin
+        spread: 100,
+        // How many frames should this last
+        duration: -1,
+        // Will draw squares instead of circle gradients
+        fastMode: false,
+        gravity: { x: 0.5, y: 0.5 },
+        // sensible values are 0-3
+        jitter: 0
+    }
+
+    Crafty.e("2D,Canvas,Particles").particles(options);
 
     this.start_game = function() {
         Crafty.scene('Playing');
