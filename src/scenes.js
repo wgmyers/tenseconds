@@ -7,9 +7,9 @@ Crafty.scene('Won', function() {
 
     Crafty.e('2D, DOM, Text')
         .text('A Winner Is You!')
-        .attr({ x: 0, y: Game.height() / 2 - 24, w: Game.width() })
+        .attr({ x: 0, y: Game.height() / 2 - 64, w: Game.width() })
         .css($text_css)
-        .textFont($text_font);
+        .textFont($title_font);
 
     Crafty.e('2D, DOM, Text')
         .text('You don\'t ever have to do this again :)')
@@ -28,13 +28,13 @@ Crafty.scene('Lost', function() {
 
     Crafty.e('2D, DOM, Text')
         .text('GAME OVER')
-        .attr({ x: 0, y: Game.height() / 2 - 24, w: Game.width() })
+        .attr({ x: 0, y: Game.height() / 2 - 64, w: Game.width() })
         .css($text_css)
-        .textFont($text_font);
+        .textFont($title_font);
 
     Crafty.e('2D, DOM, Text')
         .text('Press any key to start again')
-        .attr({ x: 0, y: 2 * Game.height() / 3 - 32, w: Game.width() })
+        .attr({ x: 0, y: 2 * Game.height() / 3 - 16, w: Game.width() })
         .css($text_css)
         .textFont($small_text_font);
 
@@ -154,7 +154,7 @@ Crafty.scene('Playing', function() {
         }
         this.clue = Crafty.e('2D, DOM, Text')
                 .text(clues[c.val-1])
-                .attr({ x: 0, y: 3 * Game.height() / 4 - 32, w: Game.width() })
+                .attr({ x: 0, y: 4 * Game.height() / 5 - 32, w: Game.width() })
                 .css($text_css)
                 .textFont($text_font);
 
@@ -240,18 +240,19 @@ Crafty.scene('Start', function() {
         .text('Ten Seconds')
         .attr({ x: 0, y: Game.height() / 3 - 16, w: Game.width() })
         .css($text_css)
-        .textFont($text_font);
+        .textFont($title_font);
 
-    Crafty.e('2D, DOM, Text')
-        .text('by Wayne Myers')
-        .attr({ x: 0, y: Game.height() / 2 - 24, w: Game.width() })
-        .css($text_css)
-        .textFont($small_text_font);
+
+    //Crafty.e('2D, DOM, Text')
+    //    .text('by Wayne Myers')
+    //    .attr({ x: 0, y: Game.height() / 2 - 24, w: Game.width() })
+    //    .css($text_css)
+    //    .textFont($small_text_font);
 
     Crafty.e('2D, DOM, Text')
         .text('Press any key to start')
         .attr({ x: 0, y: 2 * Game.height() / 3 - 32, w: Game.width() })
-        .css($text_css)
+        .css($action_css)
         .textFont($text_font);
 
     // Try out the particles thing

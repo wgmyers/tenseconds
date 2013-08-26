@@ -44,6 +44,16 @@ $small_text_font = {
     'family': 'Times'
 }
 
+$title_font = {
+    'size': '96px',
+    'family': 'Times'
+}
+
+$action_css = {
+    'color': 'blue',
+    'text-align': 'center',
+}
+
 $counter_css = {
     'color': 'red',
     'text-align': 'center',
