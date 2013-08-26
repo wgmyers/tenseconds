@@ -26,6 +26,8 @@ Crafty.scene('Lost', function() {
     this.unbind('KeyDown', this.restart_game);
 });
 
+var sec = 1000;
+
 // Scene for when the player has lost the game but doesn't know yet
 Crafty.scene('Losing', function() {
 
@@ -59,14 +61,14 @@ Crafty.scene('Losing', function() {
 
         if(c.val > 0) {
             draw();
-            this.t = setTimeout(countdown, 1000);
+            t = setTimeout(countdown, sec);
         } else {
             nukecountdown();
             Crafty.scene('Lost');
         }
     }
 
-    t = setTimeout(countdown, 1000);
+    t = setTimeout(countdown, sec);
 });
 
 // Scene for when the player is playing the game
@@ -142,16 +144,49 @@ Crafty.scene('Playing', function() {
         c.dec();
 
         if(c.val > 0 && solved) {
+            solved = false;
+            if(c.val == 7) {
+                solved = true;
+            }
             draw();
-            this.t = setTimeout(countdown, 1000);
+            t = setTimeout(countdown, sec);
         } else {
             nukecountdown();
             Crafty.scene('Losing');
         }
     }
 
-    t = setTimeout(countdown, 1000);
+    t = setTimeout(countdown, sec);
 
+    // Handle keypresses
+    this.check_answer = function() {
+        switch(c.val) {
+            case 10:
+                solved = true;
+                break;
+            case 9:
+            case 8:
+            case 6:
+            case 5:
+            case 4:
+            case 3:
+            case 2:
+                if(c.isDown(answers[c.val-1])) {
+                    solved = true;
+                } 
+                break;
+            case 7:
+                solved = false;      
+            default:
+    
+        }
+    }
+
+    this.bind('KeyDown', this.check_answer);
+
+}, function() {
+    //this.unbind('KeyDown', this.check_answer);
+    Crafty.unbind('KeyDown');
 });
 
 
@@ -185,7 +220,8 @@ Crafty.scene('Start', function() {
 
 }, function() {
     // Remove event binding once used
-    this.unbind('KeyDown', this.start_game);
+    //this.unbind('KeyDown', this.start_game);
+    Crafty.unbind('KeyDown');
 });
 
 
