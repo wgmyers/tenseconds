@@ -16,10 +16,10 @@ Basic 'ping' sound to indicate correctly answered clue
 
 Scenes:
 
-1 - Loading
+DONE1 - Loading
 2 - Winning
-3 - Losing
+DONE3 - Losing
 4 - Win screen
-5 - Lose screen
+DONE5 - Lose screen
 
 6 - Polish etc

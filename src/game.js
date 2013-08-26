@@ -38,3 +38,13 @@ $text_font = {
     'size': '48px',
     'family': 'Arial'
 }
+
+$counter_css = {
+    'color': 'red',
+    'text-align': 'center'
+}
+
+$counter_font = {
+    'size': '256px',
+    'family': 'Courier'
+}
