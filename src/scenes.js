@@ -5,12 +5,14 @@ Crafty.scene('Lost', function() {
     Crafty.e('2D, DOM, Text')
         .text('GAME OVER')
         .attr({ x: 0, y: Game.height() / 2, w: Game.width() })
-        .css($text_css);
+        .css($text_css)
+        .textFont($text_font);
 
     Crafty.e('2D, DOM, Text')
         .text('Press any key to restart')
         .attr({ x: 0, y: 2 * Game.height() / 3, w: Game.width() })
-        .css($text_css);
+        .css($text_css)
+        .textFont($text_font);
 
     this.restart_game = function() {
         Crafty.scene('Start');
@@ -37,7 +39,8 @@ Crafty.scene('Losing', function() {
         this.num = Crafty.e('2D, DOM, Text')
                 .text(c.val.toString())
                 .attr({ x: 0, y: Game.height() / 2, w: Game.width() })
-                .css($text_css);
+                .css($text_css)
+                .textFont($text_font);
     }
 
     draw();
@@ -86,17 +89,20 @@ Crafty.scene('Start', function() {
     Crafty.e('2D, DOM, Text')
         .text('Ten Seconds')
         .attr({ x: 0, y: Game.height() / 3, w: Game.width() })
-        .css($text_css);
+        .css($text_css)
+        .textFont($text_font);
 
     Crafty.e('2D, DOM, Text')
         .text('by Wayne Myers')
         .attr({ x: 0, y: Game.height() / 2, w: Game.width() })
-        .css($text_css);
+        .css($text_css)
+        .textFont($text_font);
 
     Crafty.e('2D, DOM, Text')
         .text('Press any key to start')
         .attr({ x: 0, y: 2 * Game.height() / 3, w: Game.width() })
-        .css($text_css);
+        .css($text_css)
+        .textFont($text_font);
 
     this.start_game = function() {
         Crafty.scene('Playing');
@@ -116,7 +122,8 @@ Crafty.scene('Loading', function() {
     Crafty.e('2D, DOM, Text')
         .text('Loading...')
         .attr({ x: 0, y: Game.height() / 2, w: Game.width() })
-        .css($text_css);
+        .css($text_css)
+        .textFont($text_font);
 
     // Loading code will go here
     
