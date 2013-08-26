@@ -11,6 +11,12 @@ Crafty.scene('Won', function() {
         .css($text_css)
         .textFont($text_font);
 
+    Crafty.e('2D, DOM, Text')
+        .text('You don\'t ever have to do this again :)')
+        .attr({ x: 0, y: 2 * Game.height() / 3 - 16, w: Game.width() })
+        .css($text_css)
+        .textFont($small_text_font);
+
 });
 
 // Game over scene for when we have lost
