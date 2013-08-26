@@ -17,6 +17,8 @@ Crafty.scene('Won', function() {
         .css($text_css)
         .textFont($small_text_font);
 
+    Crafty.audio.play('nothing');
+
 });
 
 // Game over scene for when we have lost
@@ -37,6 +39,7 @@ Crafty.scene('Lost', function() {
         .textFont($small_text_font);
 
     this.restart_game = function() {
+        Crafty.audio.play('beep');
         Crafty.scene('Playing');
     }
     this.bind('KeyDown', this.restart_game);
@@ -76,6 +79,9 @@ Crafty.scene('Losing', function() {
     }
 
     countdown = function() {
+
+        Crafty.audio.play('gulp');
+    
         c.dec();
 
         if(c.val > 0) {
@@ -166,6 +172,8 @@ Crafty.scene('Playing', function() {
     var solved = false;
 
     countdown = function() {
+        Crafty.audio.play('tick');
+
         c.dec();
 
         if(c.val > 0 && solved) {
@@ -191,6 +199,7 @@ Crafty.scene('Playing', function() {
         switch(c.val) {
             case 10:
                 solved = true;
+                Crafty.audio.play('correct');
                 break;
             case 9:
             case 8:
@@ -202,6 +211,7 @@ Crafty.scene('Playing', function() {
             case 1:
                 if(c.isDown(answers[c.val-1])) {
                     solved = true;
+                    Crafty.audio.play('correct');
                 } 
                 break;
             case 7:
@@ -221,6 +231,8 @@ Crafty.scene('Playing', function() {
 
 // Start scene - display message and wait for key to be pressed
 Crafty.scene('Start', function() {
+
+    Crafty.audio.play('beep');
 
     Crafty.background("#222");
 
@@ -265,9 +277,57 @@ Crafty.scene('Loading', function() {
         .textFont($text_font);
 
     // Loading code will go here
-    
+    Crafty.load([
+        'assets/null.gif',
+        'assets/beep.mp3',
+        'assets/beep.ogg',
+        'assets/beep.aac',
+        'assets/beep.wav',
+        'assets/correct.mp3',
+        'assets/correct.ogg',
+        'assets/correct.aac',
+        'assets/correct.wav',
+        'assets/gulp.mp3',
+        'assets/gulp.ogg',
+        'assets/gulp.aac',
+        'assets/gulp.wav',
+        'assets/tick.mp3',
+        'assets/tick.ogg',
+        'assets/tick.aac',
+        'assets/tick.wav',
+        'assets/Nothing.mp3',
+        'assets/Nothing.ogg',
+        'assets/Nothing.aac',
+        'assets/Nothing.wav'], 
+        function() {
 
-    // When done loading, go to the start screen
-    Crafty.scene('Start');
+        Crafty.audio.add({
+            beep: [ 'assets/beep.mp3',
+                    'assets/beep.ogg',
+                    'assets/beep.aac',
+                    'assets/beep.wav'],
+            correct: [ 'assets/correct.mp3',
+                       'assets/correct.ogg',
+                       'assets/correct.aac',
+                       'assets/correct.wav'],
+            gulp: [ 'assets/gulp.mp3',
+                    'assets/gulp.ogg',
+                    'assets/gulp.aac',
+                    'assets/gulp.wav'],
+            tick: [ 'assets/tick.mp3',
+                    'assets/tick.ogg',
+                    'assets/tick.aac',
+                    'assets/tick.wav'],
+            nothing: [  'assets/Nothing.mp3',
+                        'assets/Nothing.ogg',
+                        'assets/Nothing.aac',
+                        'assets/Nothing.wav'],
 
+        });
+
+        Crafty.scene('Start');
+
+        }
+
+    );
 });
