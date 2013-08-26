@@ -3,7 +3,7 @@ Ten Seconds To Do
 
 DONE 1 - Initial skeleton
 DONE 2 - Stick on github
-3 - Basic assets:
+DONE 3 - Basic assets:
 
 Images counting down from 10 to 0 with background
 Images counting down from 10 to 0 without clues
@@ -12,14 +12,14 @@ Basic 'tick', 'tock' sound
 Basic 'ping' sound to indicate correctly answered clue
 
 
-4 - Basic game framework
+DONE 4 - Basic game framework
 
 Scenes:
 
 DONE1 - Loading
-2 - Winning
+DONE2 - Winning
 DONE3 - Losing
-4 - Win screen
+DONE4 - Win screen
 DONE5 - Lose screen
 
 6 - Polish etc
