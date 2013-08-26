@@ -1,5 +1,18 @@
 // scenes.js
 
+// Game over scene for when we have won
+Crafty.scene('Won', function() {
+
+    Crafty.background("#004");
+
+    Crafty.e('2D, DOM, Text')
+        .text('A Winner Is You!')
+        .attr({ x: 0, y: Game.height() / 2 - 24, w: Game.width() })
+        .css($text_css)
+        .textFont($text_font);
+
+});
+
 // Game over scene for when we have lost
 Crafty.scene('Lost', function() {
 
@@ -88,7 +101,8 @@ Crafty.scene('Playing', function() {
     clues[3] = "For 'orses";
     clues[2] = "The final frontier";
     clues[1] = "Pay it later";
-    clues[0] = "Ceci n'est pas...";
+    clues[0] = "Whistle register note";
+    //clues[0] = "Ceci n'est pas...";
 
     var answers = new Array(10);
     answers[9] = "ANY";
@@ -100,7 +114,8 @@ Crafty.scene('Playing', function() {
     answers[3] = "A";
     answers[2] = "SPACE";
     answers[1] = "TAB";
-    answers[0] = "PIPE";
+    answers[0] = "F7";
+    //answers[0] = "PIPE";
 
     // Set up a new counter
     c = Crafty.e('Counter, Persist, Keyboard');
@@ -125,7 +140,7 @@ Crafty.scene('Playing', function() {
                 .text(clues[c.val-1])
                 .attr({ x: 0, y: 3 * Game.height() / 4 - 32, w: Game.width() })
                 .css($text_css)
-                .textFont($small_text_font);
+                .textFont($text_font);
 
     }
 
@@ -143,13 +158,16 @@ Crafty.scene('Playing', function() {
     countdown = function() {
         c.dec();
 
-        if(c.val > 0 && solved) {
+        if(c.val > 1 && solved) {
             solved = false;
             if(c.val == 7) {
                 solved = true;
             }
             draw();
             t = setTimeout(countdown, sec);
+        } else if(c.val == 0 && solved) {   
+            nukecountdown();
+            Crafty.scene('Won');
         } else {
             nukecountdown();
             Crafty.scene('Losing');
@@ -171,6 +189,7 @@ Crafty.scene('Playing', function() {
             case 4:
             case 3:
             case 2:
+            case 1:
                 if(c.isDown(answers[c.val-1])) {
                     solved = true;
                 } 
